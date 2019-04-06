@@ -23,7 +23,6 @@ class Clock extends React.Component{
     }
 
     componentWillUnmount() {
-        alert('offline');
         clearInterval(this.interval);
      }
 }
