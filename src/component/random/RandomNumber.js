@@ -9,7 +9,6 @@ class RandomNumber{
         this.maxValue = maxValue;
         this.fromStart = 0;
         this.fromMiddle = this.truncate(maxValue/2);
-        console.debug('middle is:',this.fromMiddle);
      }
      truncate(value){
          return parseInt(value.toString().split('.')[0]);

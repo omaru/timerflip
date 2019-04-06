@@ -24,7 +24,6 @@ it('should get random number between the MAX_VALUE given', () => {
     let randomNumber = new RandomNumber(maxValue);
     expect(randomNumber.getByMaxValue()).toBeLessThanOrEqual(maxValue);
 });
-
 it('should get random number between the MAX_VALUE given', () => {
     let maxValue =1;
     let randomNumber = new RandomNumber(maxValue);
