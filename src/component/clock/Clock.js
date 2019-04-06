@@ -1,15 +1,30 @@
 import React from 'react'
-const UP_TO = 'April 30,2019 00:00:00';
+import TimeContainer from './TimeContainer';
+import CountDownClock from './CountDown';
+import '../..//css/clock.css';
 class Clock extends React.Component{
     constructor(props){
         super(props);
-        this.endDate = new Date(UP_TO).getTime();
+        this.clock = new CountDownClock(props.endTimeText);
     }
 
     render(){
         return(
-            <p>Hello</p>
+            <div id="clock">
+                <TimeContainer  time={this.clock.getDays()}     text="Days"/>
+                <TimeContainer  time={this.clock.getHours()}   text="Hours"/>
+                <TimeContainer  time={this.clock.getMinutes()} text="Minutes"/>
+                <TimeContainer  time={this.clock.getSeconds()} text="Seconds"/>
+            </div>
         );
     }
+    componentDidMount() {
+        this.interval = setInterval(() => this.forceUpdate(), 1000);
+    }
+
+    componentWillUnmount() {
+        alert('offline');
+        clearInterval(this.interval);
+     }
 }
 export default Clock;
