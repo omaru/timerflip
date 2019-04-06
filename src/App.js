@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Clock from './components/Clock'
+import Clock from './component/clock/Clock';
 
 class App extends Component {
   render() {
